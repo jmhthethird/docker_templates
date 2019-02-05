@@ -1,0 +1,18 @@
+version: "3.5"
+
+services:
+  c1:
+    image: app1:latest
+    hostname: c1.com
+    command: ./bin/app1 foreground
+    networks:
+      - net1
+  c2:
+    image: app2:latest
+    hostname: c2.com
+    command: ./bin/app2 foreground
+    networks:
+      - net1
+networks:
+  net1:
+    driver: bridge
